@@ -82,7 +82,7 @@ class SMSModel:
         if np.any(self.X_train):
             self.classifier.fit(self.X_train, self.y_train)
             
-            print('Train set accuyracy for {}: {:.3f}%'.format(type(self.classifier).__name__, 100*self.classifier.score(self.X_train, self.y_train)))
+            print('Train set accuracy for {}: {:.3f}%'.format(type(self.classifier).__name__, 100*self.classifier.score(self.X_train, self.y_train)))
             print('Test set accuracy for {}: {:.3f}%'.format(type(self.classifier).__name__, 100*self.classifier.score(self.X_test, self.y_test)))
             print(classification_report(self.y_test, self.classifier.predict(self.X_test), target_names=['ham', 'spam']))
             self.conf_matrix_chart()
